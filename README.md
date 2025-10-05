@@ -42,15 +42,15 @@ Stelle sicher, dass die folgende Struktur vorhanden ist:
    ```
 
 5. **Öffne im Browser:**
-http://localhost:3000/sonauto-gui.html
+- http://localhost:3000/sonauto-gui.html
 
 6. **Song generieren:**
-Gib deinen Sonauto-API-Key ein.
-Beschreibe den Song im Prompt-Feld (z. B. „Ein energiegeladener Rock-Song über Abenteuer“).
-Klicke auf „Generate Song“ und warte ca. 1-2 Minuten.
+- Gib deinen Sonauto-API-Key ein.
+- Beschreibe den Song im Prompt-Feld (z. B. „Ein energiegeladener Rock-Song über Abenteuer“).
+- Klicke auf „Generate Song“ und warte ca. 1-2 Minuten.
 
 **API-Dokumentation:**
-Details zur Sonauto-API findest du unter: Sonauto Developers.
+- Details zur Sonauto-API findest du unter: Sonauto Developers.
 
 **Fehlerbehebung:**
 - Fehler 500 (Internal Server Error): Überprüfe, ob der API-Key gültig ist und die Sonauto-API erreichbar ist.
@@ -58,7 +58,7 @@ Details zur Sonauto-API findest du unter: Sonauto Developers.
 - Ad-Blocker: Deaktiviere Ad-Blocker (z. B. uBlock Origin) für localhost, um Interferenzen zu vermeiden.
 
 **Lizenz:**
-Dieses Projekt ist unter der MIT-Lizenz (LICENSE) lizenziert.
+- Dieses Projekt ist unter der MIT-Lizenz (LICENSE) lizenziert.
 
 
 
