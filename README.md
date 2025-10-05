@@ -1,3 +1,5 @@
+![GUI Screenshot](assets/sonauto-simple-gui.jpg)
+
 # Sonauto AI Song Generator
 
 Ein einfaches Tool zum Generieren von Songs mit der Sonauto AI API. Dieses Projekt umfasst eine benutzerfreundliche Web-GUI und einen Proxy-Server, der Anfragen an die Sonauto-API weiterleitet.
