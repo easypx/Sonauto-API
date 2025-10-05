@@ -28,7 +28,7 @@ Ein einfaches Tool zum Generieren von Songs mit der Sonauto AI API. Dieses Proje
 4. **Projektstruktur prüfen:**
 - Stelle sicher, dass die folgende Struktur vorhanden ist:
    ```bash
-   sonauto-projekt/
+   sonauto-proxy/
    ├── public/
    │   └── sonauto-gui.html
    ├── server.js
