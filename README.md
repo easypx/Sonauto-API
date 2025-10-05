@@ -37,7 +37,7 @@ Ein einfaches Tool zum Generieren von Songs mit der Sonauto AI API. Dieses Proje
    ```
 
 # Startanleitung 
-   Server starten:
+**Server starten:**
    ```bash
    node server.js
    Der Server läuft auf http://localhost:3000.
