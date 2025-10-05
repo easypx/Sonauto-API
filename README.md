@@ -36,30 +36,32 @@ Stelle sicher, dass die folgende Struktur vorhanden ist:
    └── .gitignore
    ```
 
-5. **Startanleitung Server starten:**
+# Startanleitung 
+Server starten:
    ```bash
    node server.js
    Der Server läuft auf http://localhost:3000.
    ```
 
-6. **Öffne im Browser:**
+**Öffne im Browser:**
 - http://localhost:3000/sonauto-gui.html
 
-6. **Song generieren:**
+**Song generieren:**
 - Gib deinen Sonauto-API-Key ein.
 - Beschreibe den Song im Prompt-Feld (z. B. „Ein energiegeladener Rock-Song über Abenteuer“).
 - Klicke auf „Generate Song“ und warte ca. 1-2 Minuten.
 
-**API-Dokumentation:**
+* API-Dokumentation:
 - Details zur Sonauto-API findest du unter: [Sonauto Developers](https://sonauto.ai/developers)
 
-**Fehlerbehebung:**
+# Fehlerbehebung:
 - Fehler 500 (Internal Server Error): Überprüfe, ob der API-Key gültig ist und die Sonauto-API erreichbar ist.
 - GUI lädt nicht: Stelle sicher, dass sonauto-gui.html im public-Ordner liegt.
 - Ad-Blocker: Deaktiviere Ad-Blocker (z. B. uBlock Origin) für localhost, um Interferenzen zu vermeiden.
 
-**Lizenz:**
+# Lizenz:
 - Dieses Projekt ist unter der MIT-Lizenz (LICENSE) lizenziert.
+
 
 
 
