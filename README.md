@@ -16,8 +16,8 @@ Ein einfaches Tool zum Generieren von Songs mit der Sonauto AI API. Dieses Proje
 
 1. **Repository klonen oder herunterladen:**
    ```bash
-   git clone https://github.com/dein-benutzername/sonauto-projekt.git
-   cd sonauto-projekt
+   git clone https://github.com/easypx/sonauto-api.git
+   cd sonauto-api
    ```
 2. **Abhängigkeiten installieren:**
    ```bash
