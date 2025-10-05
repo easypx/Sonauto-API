@@ -20,13 +20,13 @@ Ein einfaches Tool zum Generieren von Songs mit der Sonauto AI API. Dieses Proje
    cd sonauto-api
    ```
 2. **Abhängigkeiten installieren:**
-- Stelle sicher, dass du dich im Projektordner befindest
+   Stelle sicher, dass du dich im Projektordner befindest
    ```bash
    npm init -y
    npm install express axios cors
    ```
 4. **Projektstruktur prüfen:**
-Stelle sicher, dass die folgende Struktur vorhanden ist:
+   Stelle sicher, dass die folgende Struktur vorhanden ist:
    ```bash
    sonauto-projekt/
    ├── public/
@@ -37,7 +37,7 @@ Stelle sicher, dass die folgende Struktur vorhanden ist:
    ```
 
 # Startanleitung 
-Server starten:
+   Server starten:
    ```bash
    node server.js
    Der Server läuft auf http://localhost:3000.
@@ -51,7 +51,7 @@ Server starten:
 - Beschreibe den Song im Prompt-Feld (z. B. „Ein energiegeladener Rock-Song über Abenteuer“).
 - Klicke auf „Generate Song“ und warte ca. 1-2 Minuten.
 
-* API-Dokumentation:
+# API-Dokumentation:
 - Details zur Sonauto-API findest du unter: [Sonauto Developers](https://sonauto.ai/developers)
 
 # Fehlerbehebung:
