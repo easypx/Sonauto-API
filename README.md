@@ -26,14 +26,14 @@ Ein einfaches Tool zum Generieren von Songs mit der Sonauto AI API. Dieses Proje
    ```
 3. **Projektstruktur prüfen:**
 Stelle sicher, dass die folgende Struktur vorhanden ist:
-
+```bash
 sonauto-projekt/
 ├── public/
 │   └── sonauto-gui.html
 ├── server.js
 ├── package.json
 └── .gitignore
-
+```
 
 Startanleitung Server starten:
 ```bash
@@ -49,7 +49,7 @@ Gib deinen Sonauto-API-Key ein.
 Beschreibe den Song im Prompt-Feld (z. B. „Ein energiegeladener Rock-Song über Abenteuer“).
 Klicke auf „Generate Song“ und warte ca. 1-2 Minuten.
 
-API-Dokumentation
+API-Dokumentation:
 Details zur Sonauto-API findest du unter: Sonauto Developers.FehlerbehebungFehler 500 (Internal Server Error): Überprüfe, ob der API-Key gültig ist und die Sonauto-API erreichbar ist.
 GUI lädt nicht: Stelle sicher, dass sonauto-gui.html im public-Ordner liegt.
 Ad-Blocker: Deaktiviere Ad-Blocker (z. B. uBlock Origin) für localhost, um Interferenzen zu vermeiden.
