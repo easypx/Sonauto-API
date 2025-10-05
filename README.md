@@ -1,20 +1,23 @@
-# Sonauto API
-https://sonauto.ai/developers
+# Sonauto AI Song Generator
 
-# Step-by-Step Guide
-- Install Node.js: Download it from nodejs.org (if you don't have it).
+Ein einfaches Tool zum Generieren von Songs mit der Sonauto AI API. Dieses Projekt umfasst eine benutzerfreundliche Web-GUI und einen Proxy-Server, der Anfragen an die Sonauto-API weiterleitet.
 
-# Create a new project:
-- Download the sonauto-proxy folder
-- Open a terminal in it: npm init -y
-- Install dependencies: npm install express axios cors
+## Funktionen
+- **Web-GUI:** Eingabe eines Prompts und eines Sonauto-API-Keys zur Song-Generierung.
+- **Song-Wiedergabe:** Wiedergabe und Download der generierten Songs direkt im Browser.
+- **Proxy-Server:** Sichere Weiterleitung von Anfragen an die Sonauto-API.
 
-# Start the server: 
-- node server.js
+## Voraussetzungen
+- **Node.js**: Version 14 oder höher ([nodejs.org](https://nodejs.org)).
+- Ein gültiger **Sonauto API-Key** ([sonauto.ai/developers](https://sonauto.ai/developers)).
+- Ein moderner Webbrowser (z. B. Chrome, Firefox).
 
-# Open website
-- http://localhost:3000/sonauto-gui.html
+## Installation
 
+1. **Repository klonen oder herunterladen:**
+   ```bash
+   git clone https://github.com/dein-benutzername/sonauto-projekt.git
+   cd sonauto-projekt
 
 
 
