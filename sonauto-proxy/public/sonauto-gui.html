@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonauto AI Song Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        #status { margin: 20px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; }
+        #songLink { color: #28a745; text-decoration: none; font-weight: bold; }
+        #songLink:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 20px; font-size: 12px; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Sonauto AI Song Generator</h1>
+    <p>Einfache GUI zum Generieren von Songs. Gib deinen Prompt ein und deinen API-Key (aus sonauto.ai).</p>
+    
+    <label for="apiKey">API-Key:</label>
+    <input type="password" id="apiKey" placeholder="Dein Sonauto API-Key" required>
+    
+    <label for="prompt">Prompt (Beschreibung des Songs):</label>
+    <textarea id="prompt" rows="4" placeholder="z.B. 'Ein energiegeladener Rock-Song über Abenteuer'" required></textarea>
+    
+    <button id="generateBtn">Generate Song</button>
+    
+    <div id="status"></div>
+    <audio id="songPlayer" controls style="width: 100%; margin-top: 10px; display: none;"></audio>
+    <a id="songLink" style="display: none;">Song herunterladen / abspielen</a>
+    
+    <footer>Powered by <a href="https://sonauto.ai" target="_blank">Sonauto AI</a></footer>
+
+    <script>
+        const API_BASE = 'http://localhost:3000/api';
+        const generateBtn = document.getElementById('generateBtn');
+        const statusDiv = document.getElementById('status');
+        const songLink = document.getElementById('songLink');
+        const songPlayer = document.getElementById('songPlayer');
+        let pollInterval;
+
+        generateBtn.addEventListener('click', async () => {
+            const apiKey = document.getElementById('apiKey').value.trim();
+            const prompt = document.getElementById('prompt').value.trim();
+            
+            if (!apiKey || !prompt) {
+                alert('Bitte API-Key und Prompt eingeben!');
+                return;
+            }
+
+            generateBtn.disabled = true;
+            generateBtn.textContent = 'Generiere...';
+            statusDiv.innerHTML = 'Sende Anfrage...';
+            songLink.style.display = 'none';
+            songPlayer.style.display = 'none';
+            clearInterval(pollInterval);
+
+            try {
+                // Schritt 1: Song-Generierung starten
+                const response = await fetch(`${API_BASE}/generations`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        prompt: prompt,
+                        num_songs: 1,
+                        output_format: 'ogg'  // Oder 'mp3' für bessere Kompatibilität
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Fehler: ${response.status} - ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const taskId = data.task_id;
+                statusDiv.innerHTML = `Generierung gestartet! Task-ID: ${taskId}<br>Warte auf Fertigstellung... (dauert ca. 1-2 Min.)`;
+
+                // Schritt 2: Status polling
+                pollInterval = setInterval(async () => {
+                    const statusResponse = await fetch(`${API_BASE}/generations/${taskId}`, {
+                        headers: { 'Authorization': `Bearer ${apiKey}` }
+                    });
+
+                    if (!statusResponse.ok) {
+                        throw new Error(`Status-Abfrage fehlgeschlagen: ${statusResponse.status}`);
+                    }
+
+                    const statusData = await statusResponse.json();
+                    statusDiv.innerHTML = `Status: ${statusData.status}<br>${statusData.error_message ? 'Fehler: ' + statusData.error_message : ''}`;
+
+                    if (statusData.status === 'SUCCESS' && statusData.song_paths && statusData.song_paths.length > 0) {
+                        const songUrl = statusData.song_paths[0];  // Erster Song
+                        statusDiv.innerHTML += '<br>Song bereit!';
+                        
+                        songLink.href = songUrl;
+                        songLink.textContent = `Song herunterladen: ${songUrl}`;
+                        songLink.style.display = 'block';
+                        
+                        songPlayer.src = songUrl;
+                        songPlayer.style.display = 'block';
+                        
+                        clearInterval(pollInterval);
+                        generateBtn.disabled = false;
+                        generateBtn.textContent = 'Neuen Song generieren';
+                    } else if (statusData.status === 'FAILURE') {
+                        clearInterval(pollInterval);
+                        generateBtn.disabled = false;
+                        generateBtn.textContent = 'Generate Song';
+                    }
+                }, 60*1000);  // Alle n Sekunden prüfen
+            } catch (error) {
+                statusDiv.innerHTML = `Fehler: ${error.message}`;
+                generateBtn.disabled = false;
+                generateBtn.textContent = 'Generate Song';
+            }
+        });
+    </script>
+</body>
+</html>
