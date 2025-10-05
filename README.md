@@ -17,10 +17,10 @@ Ein einfaches Tool zum Generieren von Songs mit der Sonauto AI API. Dieses Proje
 1. **Repository klonen oder herunterladen:**
    ```bash
    git clone https://github.com/easypx/sonauto-api.git
-   cd sonauto-api
+   cd sonauto-proxy
    ```
 2. **Abhängigkeiten installieren:**
-   Stelle sicher, dass du dich im Projektordner befindest
+   Stelle sicher, dass du dich im Projektordner "sonauto-proxy" befindest.
    ```bash
    npm init -y
    npm install express axios cors
