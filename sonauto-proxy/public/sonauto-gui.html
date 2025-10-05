@@ -112,7 +112,7 @@
                         generateBtn.disabled = false;
                         generateBtn.textContent = 'Generate Song';
                     }
-                }, 60*1000);  // Alle n Sekunden prüfen
+                }, 5*1000);  // Alle n Sekunden prüfen
             } catch (error) {
                 statusDiv.innerHTML = `Fehler: ${error.message}`;
                 generateBtn.disabled = false;
