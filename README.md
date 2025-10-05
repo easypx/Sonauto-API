@@ -20,13 +20,13 @@ Ein einfaches Tool zum Generieren von Songs mit der Sonauto AI API. Dieses Proje
    cd sonauto-proxy
    ```
 2. **Abhängigkeiten installieren:**
-   Stelle sicher, dass du dich im Projektordner "sonauto-proxy" befindest.
+- Stelle sicher, dass du dich im Projektordner "sonauto-proxy" befindest.
    ```bash
    npm init -y
    npm install express axios cors
    ```
 4. **Projektstruktur prüfen:**
-   Stelle sicher, dass die folgende Struktur vorhanden ist:
+- Stelle sicher, dass die folgende Struktur vorhanden ist:
    ```bash
    sonauto-projekt/
    ├── public/
