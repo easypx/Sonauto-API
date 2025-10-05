@@ -50,7 +50,7 @@ Stelle sicher, dass die folgende Struktur vorhanden ist:
 - Klicke auf „Generate Song“ und warte ca. 1-2 Minuten.
 
 **API-Dokumentation:**
-- Details zur Sonauto-API findest du unter: [Sonauto Developers.](https://sonauto.ai/developers)
+- Details zur Sonauto-API findest du unter: [Sonauto Developers](https://sonauto.ai/developers)
 
 **Fehlerbehebung:**
 - Fehler 500 (Internal Server Error): Überprüfe, ob der API-Key gültig ist und die Sonauto-API erreichbar ist.
